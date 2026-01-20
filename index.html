@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>💛 Una Invitación Especial Para Ti</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --yellow: #FFD93D;
+            --yellow-light: #FFF176;
+            --yellow-dark: #F4B400;
+            --black: #0D0D0D;
+            --black-soft: #1A1A1A;
+            --cream: #FFF8E7;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: var(--black);
+            color: var(--cream);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Sunflower Background Pattern */
+        .sunflower-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+            opacity: 0.03;
+        }
+
+        .sunflower-pattern {
+            position: absolute;
+            font-size: 4rem;
+            animation: floatSunflower 20s infinite ease-in-out;
+        }
+
+        .sunflower-pattern:nth-child(1) { top: 10%; left: 5%; animation-delay: 0s; }
+        .sunflower-pattern:nth-child(2) { top: 30%; right: 10%; animation-delay: 3s; }
+        .sunflower-pattern:nth-child(3) { top: 60%; left: 8%; animation-delay: 6s; }
+        .sunflower-pattern:nth-child(4) { top: 80%; right: 5%; animation-delay: 9s; }
+        .sunflower-pattern:nth-child(5) { top: 45%; left: 50%; animation-delay: 12s; }
+
+        @keyframes floatSunflower {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(255, 217, 61, 0.08) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .sunflower-header {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .greeting {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: var(--yellow);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            opacity: 0;
+            animation: fadeInDown 1s ease-out 0.3s forwards;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.2rem, 8vw, 3.5rem);
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out 0.6s forwards;
+        }
+
+        .main-title em {
+            font-style: italic;
+            color: var(--yellow);
+            display: block;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            font-weight: 300;
+            color: rgba(255, 248, 231, 0.8);
+            max-width: 320px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 0.9s forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--yellow);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 1.2s forwards, bounce 2s ease-in-out 1.5s infinite;
+        }
+
+        .scroll-hint span {
+            display: block;
+            margin-top: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        /* Content Sections */
+        .content {
+            position: relative;
+            z-index: 1;
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 0 1.5rem 4rem;
+        }
+
+        .section {
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Event Card */
+        .event-card {
+            background: linear-gradient(145deg, rgba(255, 217, 61, 0.1), rgba(255, 217, 61, 0.02));
+            border: 1px solid rgba(255, 217, 61, 0.2);
+            border-radius: 20px;
+            padding: 2rem 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .event-label {
+            display: inline-block;
+            background: var(--yellow);
+            color: var(--black);
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            margin-bottom: 1rem;
+        }
+
+        .event-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 400;
+            color: var(--cream);
+            margin-bottom: 0.5rem;
+        }
+
+        .event-tagline {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.1rem;
+            color: var(--yellow);
+            margin-bottom: 1.5rem;
+        }
+
+        .candle-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            animation: flicker 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes flicker {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(0.95); }
+        }
+
+        /* Details Grid */
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            border-left: 3px solid var(--yellow);
+        }
+
+        .detail-icon {
+            font-size: 1.5rem;
+            width: 40px;
+            text-align: center;
+        }
+
+        .detail-text {
+            flex: 1;
+        }
+
+        .detail-label {
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--yellow);
+            margin-bottom: 0.2rem;
+        }
+
+        .detail-value {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--cream);
+        }
+
+        /* Dress Code Section */
+        .dresscode {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 217, 61, 0.05);
+            border-radius: 16px;
+            border: 1px dashed rgba(255, 217, 61, 0.3);
+        }
+
+        .dresscode-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            color: var(--yellow);
+            margin-bottom: 0.8rem;
+        }
+
+        .dresscode-text {
+            font-size: 0.95rem;
+            color: var(--cream);
+            line-height: 1.5;
+        }
+
+        .dresscode-emoji {
+            font-size: 1.5rem;
+            margin-top: 0.8rem;
+        }
+
+        /* Program Section */
+        .program-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--yellow);
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .program-list {
+            list-style: none;
+        }
+
+        .program-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid rgba(255, 217, 61, 0.1);
+        }
+
+        .program-item::before {
+            content: '🎵';
+            font-size: 0.8rem;
+        }
+
+        .song-info {
+            flex: 1;
+        }
+
+        .song-title {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1rem;
+            color: var(--cream);
+        }
+
+        .song-artist {
+            font-size: 0.75rem;
+            color: rgba(255, 248, 231, 0.6);
+            margin-top: 0.2rem;
+        }
+
+        /* RSVP Section */
+        .rsvp-section {
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .rsvp-question {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--cream);
+            margin-bottom: 0.5rem;
+        }
+
+        .rsvp-subtext {
+            font-size: 0.95rem;
+            color: var(--yellow);
+            margin-bottom: 2rem;
+        }
+
+        .rsvp-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .rsvp-btn {
+            padding: 1rem 2.5rem;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .rsvp-btn.yes {
+            background: linear-gradient(135deg, var(--yellow), var(--yellow-dark));
+            color: var(--black);
+            box-shadow: 0 4px 20px rgba(255, 217, 61, 0.4);
+        }
+
+        .rsvp-btn.yes:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 30px rgba(255, 217, 61, 0.5);
+        }
+
+        .rsvp-btn.no {
+            background: transparent;
+            color: var(--cream);
+            border: 2px solid rgba(255, 248, 231, 0.3);
+        }
+
+        .rsvp-btn.no:hover {
+            border-color: var(--yellow);
+            color: var(--yellow);
+        }
+
+        /* Response Screens */
+        .response-screen {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 100;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .response-screen.active {
+            display: flex;
+        }
+
+        /* YES Response */
+        .yes-response {
+            background: linear-gradient(135deg, var(--black) 0%, #1a1a0a 100%);
+        }
+
+        .yes-content {
+            animation: popIn 0.6s ease-out;
+        }
+
+        @keyframes popIn {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .yes-emoji {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            animation: heartbeat 1s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .yes-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: var(--yellow);
+            margin-bottom: 1rem;
+        }
+
+        .yes-message {
+            font-size: 1.1rem;
+            color: var(--cream);
+            line-height: 1.8;
+            max-width: 300px;
+            margin-bottom: 2rem;
+        }
+
+        .countdown-box {
+            background: rgba(255, 217, 61, 0.1);
+            border: 1px solid var(--yellow);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .countdown-label {
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            color: var(--yellow);
+            margin-bottom: 0.5rem;
+        }
+
+        .countdown-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: var(--cream);
+        }
+
+        /* Confetti */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: var(--yellow);
+            animation: confetti-fall 3s linear infinite;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* NO Response */
+        .no-response {
+            background: var(--black);
+        }
+
+        .no-content {
+            animation: shake 0.5s ease-in-out;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-10px); }
+            75% { transform: translateX(10px); }
+        }
+
+        .no-emoji {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+        }
+
+        .no-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: var(--cream);
+            margin-bottom: 1rem;
+        }
+
+        .no-message {
+            font-size: 1rem;
+            color: rgba(255, 248, 231, 0.8);
+            line-height: 1.8;
+            max-width: 300px;
+            margin-bottom: 2rem;
+        }
+
+        .try-again-btn {
+            padding: 1rem 2rem;
+            font-family: 'Quicksand', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 600;
+            background: var(--yellow);
+            color: var(--black);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .try-again-btn:hover {
+            transform: scale(1.05);
+        }
+
+        .running-away {
+            transition: all 0.3s ease;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            border-top: 1px solid rgba(255, 217, 61, 0.1);
+        }
+
+        .footer-text {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1rem;
+            color: var(--yellow);
+            opacity: 0.7;
+        }
+
+        .footer-heart {
+            font-size: 1.5rem;
+            margin-top: 0.5rem;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        /* Floating Hearts */
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 1.2rem;
+            opacity: 0.15;
+            animation: floatHeart 12s infinite linear;
+        }
+
+        .heart:nth-child(1) { left: 5%; animation-delay: 0s; }
+        .heart:nth-child(2) { left: 25%; animation-delay: 2s; }
+        .heart:nth-child(3) { left: 45%; animation-delay: 4s; }
+        .heart:nth-child(4) { left: 65%; animation-delay: 6s; }
+        .heart:nth-child(5) { left: 85%; animation-delay: 8s; }
+
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(100vh) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.15;
+            }
+            90% {
+                opacity: 0.15;
+            }
+            100% {
+                transform: translateY(-100vh) scale(1);
+                opacity: 0;
+            }
+        }
+
+        /* Poem Section */
+        .poem-card {
+            background: linear-gradient(145deg, rgba(255, 217, 61, 0.08), rgba(0, 0, 0, 0.4));
+            border: 1px solid rgba(255, 217, 61, 0.25);
+            border-radius: 24px;
+            padding: 2.5rem 1.8rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .poem-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--yellow), transparent);
+        }
+
+        .poem-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .poem-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-style: italic;
+            color: var(--yellow);
+            margin-bottom: 1.5rem;
+        }
+
+        .poem-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: var(--cream);
+        }
+
+        .poem-text p {
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+
+        .poem-ending {
+            color: var(--yellow-light);
+            font-size: 1.1rem;
+        }
+
+        .poem-ending strong {
+            color: var(--yellow);
+        }
+
+        .poem-signature {
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            color: var(--yellow);
+            opacity: 0.8;
+            font-style: italic;
+        }
+
+        /* Link button */
+        .event-link {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.8rem 1.5rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            color: var(--yellow);
+            border: 1px solid var(--yellow);
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .event-link:hover {
+            background: var(--yellow);
+            color: var(--black);
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="sunflower-bg">
+        <span class="sunflower-pattern">🌻</span>
+        <span class="sunflower-pattern">🌻</span>
+        <span class="sunflower-pattern">🌻</span>
+        <span class="sunflower-pattern">🌻</span>
+        <span class="sunflower-pattern">🌻</span>
+    </div>
+
+    <div class="floating-hearts">
+        <span class="heart">💛</span>
+        <span class="heart">🖤</span>
+        <span class="heart">💛</span>
+        <span class="heart">🖤</span>
+        <span class="heart">💛</span>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="sunflower-header">🌻</div>
+        <p class="greeting">Mi reina hermosa...</p>
+        <h1 class="main-title">
+            Tengo una sorpresa
+            <em>para ti</em>
+        </h1>
+        <p class="subtitle">
+            Porque te mereces una noche mágica, llena de velas, música romántica y todo mi amor 💛
+        </p>
+        <div class="scroll-hint">
+            Desliza para descubrir
+            <span>↓</span>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="content">
+        <!-- Event Card -->
+        <section class="section">
+            <div class="event-card">
+                <div class="candle-icon">🕯️✨🕯️</div>
+                <span class="event-label">San Valentín 2026</span>
+                <h2 class="event-name">Candlelight</h2>
+                <p class="event-tagline">Especial de San Valentín</p>
+                
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <span class="detail-icon">📅</span>
+                        <div class="detail-text">
+                            <p class="detail-label">Cuándo</p>
+                            <p class="detail-value">Sábado 14 de Febrero</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-icon">🕗</span>
+                        <div class="detail-text">
+                            <p class="detail-label">Hora</p>
+                            <p class="detail-value">8:30 PM</p>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-icon">📍</span>
+                        <div class="detail-text">
+                            <p class="detail-label">Dónde</p>
+                            <p class="detail-value">Auditorio D. Garcés<br><small style="opacity: 0.7;">Biblioteca Departamental, Cali</small></p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="https://feverup.com/m/488191" target="_blank" class="event-link">Ver evento en Fever 🎟️</a>
+            </div>
+        </section>
+
+        <!-- Dress Code -->
+        <section class="section">
+            <div class="dresscode">
+                <h3 class="dresscode-title">¿Qué me pongo, mi amor? 👗</h3>
+                <p class="dresscode-text">
+                    Algo bonito pero cómodo, mi reina. Ni muy fancy ni en pijama 😄<br>
+                    <strong style="color: var(--yellow);">Elegante casual</strong> es la onda perfecta ✨
+                </p>
+                <p class="dresscode-emoji">👠 🖤 💛</p>
+            </div>
+        </section>
+
+        <!-- Program -->
+        <section class="section">
+            <h3 class="program-title">🎻 Lo que vamos a escuchar</h3>
+            <ul class="program-list">
+                <li class="program-item">
+                    <div class="song-info">
+                        <p class="song-title">Unchained Melody</p>
+                        <p class="song-artist">The Righteous Brothers</p>
+                    </div>
+                </li>
+                <li class="program-item">
+                    <div class="song-info">
+                        <p class="song-title">Can You Feel the Love Tonight?</p>
+                        <p class="song-artist">Elton John</p>
+                    </div>
+                </li>
+                <li class="program-item">
+                    <div class="song-info">
+                        <p class="song-title">A Whole New World</p>
+                        <p class="song-artist">Alan Menken</p>
+                    </div>
+                </li>
+                <li class="program-item">
+                    <div class="song-info">
+                        <p class="song-title">Your Song</p>
+                        <p class="song-artist">Elton John</p>
+                    </div>
+                </li>
+                <li class="program-item">
+                    <div class="song-info">
+                        <p class="song-title">La Vie En Rose</p>
+                        <p class="song-artist">Édith Piaf</p>
+                    </div>
+                </li>
+                <li class="program-item">
+                    <div class="song-info">
+                        <p class="song-title">Can't Help Falling in Love</p>
+                        <p class="song-artist">Elvis Presley</p>
+                    </div>
+                </li>
+                <li class="program-item">
+                    <div class="song-info">
+                        <p class="song-title">A Thousand Years</p>
+                        <p class="song-artist">Christina Perri</p>
+                    </div>
+                </li>
+                <li class="program-item">
+                    <div class="song-info">
+                        <p class="song-title">My Heart Will Go On</p>
+                        <p class="song-artist">Celine Dion</p>
+                    </div>
+                </li>
+                <li class="program-item">
+                    <div class="song-info">
+                        <p class="song-title">...y más sorpresas 💛</p>
+                        <p class="song-artist">Cuarteto Farallones</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Poem Section -->
+        <section class="section">
+            <div class="poem-card">
+                <div class="poem-icon">✨</div>
+                <h3 class="poem-title">Para ti, mi girasol</h3>
+                <div class="poem-text">
+                    <p>
+                        Tu sonrisa es mi amanecer,<br>
+                        la luz que no sabía que necesitaba.<br>
+                        Cada día a tu lado<br>
+                        es un regalo que no esperaba.
+                    </p>
+                    <p>
+                        Me alegras sin siquiera intentarlo,<br>
+                        con esa risa que me desarma.<br>
+                        Y aunque apenas estamos comenzando,<br>
+                        ya sé que esto vale la pena.
+                    </p>
+                    <p>
+                        Quiero que funcione, mi reina,<br>
+                        quiero construir algo bonito contigo.<br>
+                        Cada momento juntos<br>
+                        me convence más de lo que siento.
+                    </p>
+                    <p class="poem-ending">
+                        Por eso esta invitación,<br>
+                        por eso las velas y la música...<br>
+                        <strong>Porque quiero darte lo mejor de mí.</strong>
+                    </p>
+                </div>
+                <div class="poem-signature">— Con todo mi cariño 🌻</div>
+            </div>
+        </section>
+
+        <!-- RSVP -->
+        <section class="section rsvp-section">
+            <p class="rsvp-question">Entonces, mi amor...</p>
+            <p class="rsvp-subtext">¿Me acompañas a esta cita? 🌻</p>
+            <div class="rsvp-buttons">
+                <button class="rsvp-btn yes" onclick="showYesResponse()">¡Sí! 💛</button>
+                <button class="rsvp-btn no running-away" id="noBtn" onclick="handleNo()">No 😢</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-text">Hecho con todo mi amor para ti</p>
+        <p class="footer-heart">🌻💛🖤</p>
+    </footer>
+
+    <!-- YES Response Screen -->
+    <div class="response-screen yes-response" id="yesScreen">
+        <div class="yes-content">
+            <div class="yes-emoji">🌻💛🎻</div>
+            <h2 class="yes-title">¡Sabía que dirías que sí!</h2>
+            <p class="yes-message">
+                Ay mi reina, me haces el hombre más feliz del mundo 🥹<br><br>
+                Prepárate para una noche inolvidable con velas, música y muuucho amor 💛
+            </p>
+            <div class="countdown-box">
+                <p class="countdown-label">Nuestra cita es en</p>
+                <p class="countdown-value" id="countdown">Calculando...</p>
+            </div>
+            <p style="font-size: 0.9rem; color: var(--yellow);">
+                Te quiero, mi girasol 🌻
+            </p>
+        </div>
+    </div>
+
+    <!-- NO Response Screen -->
+    <div class="response-screen no-response" id="noScreen">
+        <div class="no-content">
+            <div class="no-emoji">🥺💔</div>
+            <h2 class="no-title">¿En serio, mi amor?</h2>
+            <p class="no-message">
+                Nooo, debe ser un error del sistema... 😭<br><br>
+                ¿Te imaginas? Yo solito con las velas, escuchando música romántica, llorando porque no fuiste... 🕯️😢
+            </p>
+            <button class="try-again-btn" onclick="hideNoResponse()">
+                Okaaay, ya reconsidera 💛
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const sections = document.querySelectorAll('.section');
+        
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // NO button running away
+        let noClickCount = 0;
+        const noBtn = document.getElementById('noBtn');
+        
+        function handleNo() {
+            noClickCount++;
+            
+            if (noClickCount < 3) {
+                // Move button to random position
+                const maxX = window.innerWidth - noBtn.offsetWidth - 20;
+                const maxY = window.innerHeight - noBtn.offsetHeight - 20;
+                const randomX = Math.random() * maxX;
+                const randomY = Math.random() * maxY;
+                
+                noBtn.style.position = 'fixed';
+                noBtn.style.left = randomX + 'px';
+                noBtn.style.top = randomY + 'px';
+                noBtn.style.zIndex = '50';
+                
+                // Change button text
+                const texts = ['¿Segura? 🥺', '¡No huyas! 😢', 'Piénsalo... 💛'];
+                noBtn.textContent = texts[noClickCount - 1] || 'No 😢';
+            } else {
+                // Show sad response
+                showNoResponse();
+            }
+        }
+
+        function showYesResponse() {
+            document.getElementById('yesScreen').classList.add('active');
+            createConfetti();
+            updateCountdown();
+        }
+
+        function showNoResponse() {
+            document.getElementById('noScreen').classList.add('active');
+        }
+
+        function hideNoResponse() {
+            document.getElementById('noScreen').classList.remove('active');
+            // Reset no button
+            noClickCount = 0;
+            noBtn.style.position = 'relative';
+            noBtn.style.left = 'auto';
+            noBtn.style.top = 'auto';
+            noBtn.textContent = 'No 😢';
+        }
+
+        // Confetti effect
+        function createConfetti() {
+            const colors = ['#FFD93D', '#FFF176', '#F4B400', '#FFFFFF', '#000000'];
+            
+            for (let i = 0; i < 50; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.className = 'confetti';
+                    confetti.style.left = Math.random() * 100 + 'vw';
+                    confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                    confetti.style.animationDelay = Math.random() * 0.5 + 's';
+                    
+                    document.getElementById('yesScreen').appendChild(confetti);
+                    
+                    setTimeout(() => confetti.remove(), 5000);
+                }, i * 50);
+            }
+        }
+
+        // Countdown
+        function updateCountdown() {
+            const eventDate = new Date('2026-02-14T20:30:00');
+            const now = new Date();
+            const diff = eventDate - now;
+            
+            if (diff > 0) {
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                
+                document.getElementById('countdown').textContent = 
+                    `${days} días y ${hours} horas 💛`;
+            } else {
+                document.getElementById('countdown').textContent = '¡Es hoy! 🎉';
+            }
+        }
+    </script>
+</body>
+</html>
